@@ -1,9 +1,16 @@
-configuration: Release
+branches:
+  only:
+  - master
 
 #restore pacakges
 before build:
-  - dotnet restore
+  - cmd: dotnet -version
+  - dotnet restore webapi.csproj --verbostiy m
 
-build:
-  verbosity: minimal
-  publish_wap: true
+build_script:
+  # output will be in ./src/bin/debug/netcoreapp1.1/publish
+  - cmd: dotnet publish webapi.csproj
+  
+test_script:
+  # run the unit tests (requires changing into the test directory)
+  - cmd: dotnet xunit
