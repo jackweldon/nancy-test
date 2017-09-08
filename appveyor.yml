@@ -4,7 +4,7 @@ branches:
 
 #restore pacakges
 before_build:
-  - cmd: dotnet -version
+  - cmd: dotnet --version
   - dotnet restore webapi.csproj --verbostiy m
 
 build_script:
