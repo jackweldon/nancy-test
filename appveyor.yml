@@ -5,8 +5,8 @@ branches:
 #restore pacakges
 before_build:
   - cmd: dotnet --version
-  - dotnet restore webapi.csproj --verbostiy m
-
+  - dotnet restore webapi.csproj
+  
 build_script:
   # output will be in ./src/bin/debug/netcoreapp1.1/publish
   - cmd: dotnet publish webapi.csproj
