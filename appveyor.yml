@@ -2,8 +2,8 @@ configuration: Release
 
 #restore pacakges
 before build:
-  -dotnet restore
-  
-  build:
-    verbosity: minimal
-    publish_wap: true
+  - dotnet restore
+
+build:
+  verbosity: minimal
+  publish_wap: true
